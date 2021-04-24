@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);
     }
@@ -73,6 +73,8 @@ class Button extends Component {
             // Redux に action を送る(store の reducer が呼び出され必要な処理が実行される)
             // 引数に action type を指定
             this.props.dispatch({ type: 'DECREMENT' });
+        } else if (e.ctrlKey) {
+            this.props.dispatch({ type: 'RESET' });
         } else {
             this.props.dispatch({ type: 'INCREMENT' });
         }
