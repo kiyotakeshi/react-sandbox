@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <h1>React</h1>
+        <div id="root">wait...</div>
+        <script type="text/babel">
+            let dom = document.querySelector('#root');
+
+            let message = 'message with style';
+
+            const style = {
+                fontSize: '30pt', // font-size に該当
+                color: 'blue',
+                border: '1px solid red',
+            };
+
+            let el = (
+                <div>
+                    <p style={style}>{message}</p>
+                </div>
+            );
+
+            ReactDOM.render(el, dom);
+        </script>
+    </body>
+</html>
