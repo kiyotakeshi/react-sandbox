@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <h1>React</h1>
+        <div id="root">wait...</div>
+        <script type="text/babel">
+            let dom = document.querySelector('#root');
+
+            // JSX を返す関数を用意し、メッセージを作成
+            let printMessage = (msg, size, color) => {
+                const style = {
+                    fontSize: size + 'pt',
+                    color: color,
+                    border: '1px solid' + color,
+                };
+                return <p style={style}>{msg}</p>;
+            };
+
+            let el = (
+                <div>
+                    {printMessage('First message', 30, '#ddd')}
+                    {printMessage('Second message', 40, '#aaa')}
+                    {printMessage('Third message', 50, '#333')}
+                </div>
+            );
+
+            ReactDOM.render(el, dom);
+        </script>
+    </body>
+</html>
