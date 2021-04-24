@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <h1>React</h1>
+        <div id="root">wait...</div>
+        <script type="text/babel">
+            let dom = document.querySelector('#root');
+
+            // let message = 'this is message';
+
+            let true_message = 'this is true message';
+            let false_message = 'this is false message';
+
+            // let flg = true;
+            let flg = false;
+
+            // let el = (
+            //     // true なら JSX を表示
+            //     <div>{flg && <p>{message}</p>}</div>
+            // );
+
+            // 三項演算子の使用
+            let el = (
+                <div>
+                    {flg ? <p>{true_message}</p> : <p>{false_message}</p>}
+                </div>
+            )
+
+            ReactDOM.render(el, dom);
+        </script>
+    </body>
+</html>
