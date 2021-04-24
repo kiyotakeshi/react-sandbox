@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <!-- JSX を利用するために必要 -->
+        <!-- Babel が古い仕様の JavaScript にトランスパイルすることで動作可能 -->
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <h1>React</h1>
+        <div id="root">wait...</div>
+        <!-- type の指定により babel のコンパイラのコンパイル対象となる -->
+        <script type="text/babel">
+            let dom = document.querySelector('#root');
+
+            // JSX により、 HTML のタグを直接 JavaScript のスクリプトにに記述できる
+            let el = (
+
+                // <div> がないと <h2>,<p> 二つの Element オブジェクトになってしまうため、 render メソッドがエラーになる
+                // let element = React.createElement('p', {}, 'Hello');
+                // ReactDOM.render(element, dom);
+                <div>
+                    <h2>JSX sample</h2>
+                    <p>This is sample message.</p>
+                </div>
+            );
+            ReactDOM.render(el, dom);
+        </script>
+    </body>
+</html>
