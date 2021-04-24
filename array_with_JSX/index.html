@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>React</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    </head>
+    <body>
+        <h1>React</h1>
+        <div id="root">wait...</div>
+        <script type="text/babel">
+            let dom = document.querySelector('#root');
+
+            // const list = {
+            //     fontSize: '18pt',
+            //     padding: '5px 50px',
+            // };
+
+            // // 配列に表示項目をまとめる
+            // let data = [<li>One</li>, <li>Two</li>, <li>Three</li>];
+
+            // let el = (
+            //     <div>
+            //         <ul style={list}>{data}</ul>
+            //     </div>
+            // );
+
+            const table = {
+                fontSize: '16pt',
+                padding: '5px 50px',
+            };
+
+            const th = {
+                color: 'white',
+                backgroundColor: 'blue',
+                padding: '5px 15px',
+            };
+
+            const td = {
+                color: 'black',
+                padding: '5px 15px',
+                border: '1px solid gray',
+            };
+
+            let data = [
+                { name: 'Taro', mail: 'taro@test.com', age: 25 },
+                { name: 'Jiro', mail: 'jiro@test.com', age: 30 },
+                { name: 'Ichiro', mail: 'ichiro@test.com', age: 40 },
+            ];
+
+            // map メソッドは配列の各要素を元に別の配列を作る
+            let el = (
+                <div>
+                    <table style={table}>
+                        <tr>
+                            <th style={th}>name</th>
+                            <th style={th}>mail</th>
+                            <th style={th}>age</th>
+                        </tr>
+                        {data.map((value) => (
+                            <tr>
+                                <td style={td}>{value.name}</td>
+                                <td style={td}>{value.mail}</td>
+                                <td style={td}>{value.age}</td>
+                            </tr>
+                        ))}
+                    </table>
+                </div>
+            );
+
+            ReactDOM.render(el, dom);
+        </script>
+    </body>
+</html>
