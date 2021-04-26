@@ -15,6 +15,8 @@ yarn add next react react-dom
 ```
 
 ```shell
+yarn install
+
 yarn run dev
 ```
 
