@@ -1,8 +1,14 @@
-import Counter from '../components/Counter';
+import Link from 'next/link';
+import Layout from '../components/Layout';
+import Image from '../static/Image';
+
 export default () => (
-    <div>
-        <h1>Next.js</h1>
+    <Layout header="Next" title="Top page.">
         <p>Welcome to next.js!</p>
-        <Counter />
-    </div>
+        <Image fname="azarashi.jpeg" size="300" />
+        <hr />
+        <Link href="./other">
+            <button>go to Other</button>
+        </Link>
+    </Layout>
 );
